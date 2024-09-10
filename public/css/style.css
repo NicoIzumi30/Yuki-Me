@@ -12163,7 +12163,7 @@ td.fc-header-center {
 }
 
 .auth-left {
-  background: linear-gradient(90deg, #ECF0FF 0%, #FAFBFF 100%);
+  /* background: linear-gradient(90deg, #ECF0FF 0%, #FAFBFF 100%); */
   width: 50%;
 }
 

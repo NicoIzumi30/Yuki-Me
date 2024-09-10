@@ -5,30 +5,41 @@
     <section class="auth bg-base d-flex flex-wrap">  
     <div class="auth-left d-lg-block d-none">
         <div class="d-flex align-items-center flex-column h-100 justify-content-center">
-            <img src="{{asset('images')}}/auth/auth-img.png" alt="">
+            <img src="{{asset('images')}}/auth/register.svg" style="width: 75%" alt="">
         </div>
     </div>
     <div class="auth-right py-32 px-24 d-flex flex-column justify-content-center">
         <div class="max-w-464-px mx-auto w-100">
             <div>
-                <a href="index.html" class="mb-40 max-w-290-px">
-                    <img src="{{asset('images')}}/logo.png" alt="">
+                <a href="index.html" class="mb-40 max-w-290-px ">
+                    <img src="{{asset('images')}}/dark.png" style="width: 200px" alt="">
                 </a>
                 <h4 class="mb-12">Sign Up to your Account</h4>
                 <p class="mb-32 text-secondary-light text-lg">Welcome back! please enter your detail</p>
             </div>
-            <form action="#">
+            @if ($errors->any())
+                    <div class="alert alert-danger" role="alert">
+                        {{ $errors->first()}}
+                    </div>
+                @endif
+                @if (session('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
+            <form action="{{route('register.store')}}" method="POST">
+                @csrf
                 <div class="icon-field mb-16">
                     <span class="icon top-50 translate-middle-y">
                         <iconify-icon icon="f7:person"></iconify-icon>
                     </span>
-                    <input type="text" class="form-control h-56-px bg-neutral-50 radius-12" placeholder="Full Name">
+                    <input type="text" class="form-control h-56-px bg-neutral-50 radius-12" name="full_name" placeholder="Full Name">
                 </div>
                 <div class="icon-field mb-16">
                     <span class="icon top-50 translate-middle-y">
                         <iconify-icon icon="mage:email"></iconify-icon>
                     </span>
-                    <input type="email" class="form-control h-56-px bg-neutral-50 radius-12" placeholder="Email">
+                    <input type="email" class="form-control h-56-px bg-neutral-50 radius-12" name="email" placeholder="Email" required>
                 </div>
                 <div class="mb-16">
                     <div class="position-relative ">
@@ -36,7 +47,7 @@
                             <span class="icon top-50 translate-middle-y">
                                 <iconify-icon icon="solar:lock-password-outline"></iconify-icon>
                             </span> 
-                            <input type="password" class="form-control h-56-px bg-neutral-50 radius-12" id="your-password" placeholder="Password">
+                            <input type="password" class="form-control h-56-px bg-neutral-50 radius-12" name="password" id="your-password" placeholder="Password" required>
                         </div>
                         <span class="toggle-password ri-eye-line cursor-pointer position-absolute end-0 top-50 translate-middle-y me-16 text-secondary-light" data-toggle="#your-password"></span>
                     </div>
@@ -45,7 +56,7 @@
                 <div class="">
                     <div class="d-flex justify-content-between gap-2">
                         <div class="form-check style-check d-flex align-items-start">
-                            <input class="form-check-input border border-neutral-300 mt-4" type="checkbox" value="" id="condition">
+                            <input class="form-check-input border border-neutral-300 mt-4" type="checkbox" value="" id="condition" required>
                             <label class="form-check-label text-sm" for="condition">
                                 By creating an account means you agree to the 
                                 <a href="javascript:void(0)" class="text-primary-600 fw-semibold">Terms & Conditions</a> and our 

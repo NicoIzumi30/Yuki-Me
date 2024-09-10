@@ -138,4 +138,9 @@
             <button class="btn btn-primary-600"><iconify-icon icon="icon-park-outline:link" class="me-2" style="display:inline-block"></iconify-icon> Create Short Links</button>
         </div>
     </div>
+    @push('scripts')
+    <script src="{{asset('js')}}/lib/apexcharts.min.js"></script>
+    <script src="{{asset('js')}}/homeOneChart.js"></script>
+
+    @endpush
 </x-app-main-layout>

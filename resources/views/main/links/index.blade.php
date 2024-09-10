@@ -16,50 +16,9 @@
                 <li class="fw-medium">Manage Links</li>
             </ul>
         </div>
-        <div class="modal fade" id="createShortLink" tabindex="-1" aria-labelledby="createShortLinkLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="createShortLinkLabel">Create Short Link</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="title" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Category</label>
-                            <select name="category" id="category" class="form-select">
-                                <option value="" disabled selected>Select Category</option>
-                                <option value="catatan">Catatan</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="longLink" class="form-label">Long Link</label>
-                            <textarea name="longLink" id="longLink" class="form-control" required></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="shortLink" class="form-label">Short Link</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-base">s.i-am.host/</span>
-                                <input type="text" class="form-control">
-                            </div>
-                            <!-- <input type="text" class="form-control" id="shortLink" required> -->
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Create</button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-primary-600" data-bs-toggle="modal"
-                data-bs-target="#createShortLink"><iconify-icon icon="ic:outline-plus"
-                    style="display: inline-block"></iconify-icon> Create Short Link</button>
+            <a href="{{route('link.create')}}" class="btn btn-primary-600" ><iconify-icon icon="ic:outline-plus"
+                    style="display: inline-block"></iconify-icon> Create Short Link</a>
         </div>
         <div class="row gy-4 mt-1">
             <div class="col-xl-12">
@@ -91,7 +50,7 @@
                                     <td>
                                         Catatan
                                     </td>
-                                    <td><a href="https://s.i-am.host/bukuCatatan" class="text-primary">s.i-am.host/bukuCatatan</a> <iconify-icon icon="fa-regular:copy" class="d-inline-block text-secondary"></iconify-icon></td>
+                                    <td><a href="https://s.i-am.host/bukuCatatan" class="text-primary">s.i-am.host/bukuCatatan</a> <iconify-icon icon="fa-regular:copy" class="d-inline-block text-secondary"></iconify-icon>   </td>
                                     <td><a href="https://docs.google.com/document/d/1b2GHMxsvVcJgYf7isGtJ0DwHA-lbtvF2/edit?usp=sharing&ouid=117530526653861550397&rtpof=true&sd=true" class="text-primary">https://docs.google.com/document/....</a></td>
                                     <td>30 July 2024, 08:0</td>
                                     <td>100</td>
@@ -118,7 +77,7 @@
                                     <td>
                                         Catatan
                                     </td>
-                                    <td><a href="https://s.i-am.host/bukuCatatan" class="text-primary">s.i-am.host/bukuCatatan</a> <iconify-icon icon="fa-regular:copy" class="d-inline-block text-secondary"></iconify-icon></td>
+                                    <td><a href="https://s.i-am.host/bukuCatatan" class="text-primary">s.i-am.host/bukuCatatan</a> <iconify-icon icon="fa-regular:copy" class="d-inline-block text-secondary"></iconify-icon>   </td>
                                     <td><a href="https://docs.google.com/document/d/1b2GHMxsvVcJgYf7isGtJ0DwHA-lbtvF2/edit?usp=sharing&ouid=117530526653861550397&rtpof=true&sd=true" class="text-primary">https://docs.google.com/document/....</a></td>
                                     <td>30 July 2024, 08:0</td>
                                     <td>100</td>
@@ -145,7 +104,7 @@
                                     <td>
                                         Catatan
                                     </td>
-                                    <td><a href="https://s.i-am.host/bukuCatatan" class="text-primary">s.i-am.host/bukuCatatan</a> <iconify-icon icon="fa-regular:copy" class="d-inline-block text-secondary"></iconify-icon></td>
+                                    <td><a href="https://s.i-am.host/bukuCatatan" class="text-primary">s.i-am.host/bukuCatatan</a> <iconify-icon icon="fa-regular:copy" class="d-inline-block text-secondary"></iconify-icon>   </td>
                                     <td><a href="https://docs.google.com/document/d/1b2GHMxsvVcJgYf7isGtJ0DwHA-lbtvF2/edit?usp=sharing&ouid=117530526653861550397&rtpof=true&sd=true" class="text-primary">https://docs.google.com/document/....</a></td>
                                     <td>30 July 2024, 08:0</td>
                                     <td>100</td>
@@ -172,7 +131,7 @@
                                     <td>
                                         Catatan
                                     </td>
-                                    <td><a href="https://s.i-am.host/bukuCatatan" class="text-primary">s.i-am.host/bukuCatatan</a> <iconify-icon icon="fa-regular:copy" class="d-inline-block text-secondary"></iconify-icon></td>
+                                    <td><a href="https://s.i-am.host/bukuCatatan" class="text-primary">s.i-am.host/bukuCatatan</a> <iconify-icon icon="fa-regular:copy" class="d-inline-block text-secondary"></iconify-icon>   </td>
                                     <td><a href="https://docs.google.com/document/d/1b2GHMxsvVcJgYf7isGtJ0DwHA-lbtvF2/edit?usp=sharing&ouid=117530526653861550397&rtpof=true&sd=true" class="text-primary">https://docs.google.com/document/....</a></td>
                                     <td>30 July 2024, 08:0</td>
                                     <td>100</td>
@@ -199,7 +158,7 @@
                                     <td>
                                         Catatan
                                     </td>
-                                    <td><a href="https://s.i-am.host/bukuCatatan" class="text-primary">s.i-am.host/bukuCatatan</a> <iconify-icon icon="fa-regular:copy" class="d-inline-block text-secondary"></iconify-icon></td>
+                                    <td><a href="https://s.i-am.host/bukuCatatan" class="text-primary">s.i-am.host/bukuCatatan</a> <iconify-icon icon="fa-regular:copy" class="d-inline-block text-secondary"></iconify-icon>   </td>
                                     <td><a href="https://docs.google.com/document/d/1b2GHMxsvVcJgYf7isGtJ0DwHA-lbtvF2/edit?usp=sharing&ouid=117530526653861550397&rtpof=true&sd=true" class="text-primary">https://docs.google.com/document/....</a></td>
                                     <td>30 July 2024, 08:0</td>
                                     <td>100</td>
@@ -227,4 +186,7 @@
             </div>
         </div>
     </div>
+    @push('scripts')
+
+    @endpush
 </x-app-main-layout>

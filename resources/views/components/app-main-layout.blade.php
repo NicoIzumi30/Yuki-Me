@@ -35,6 +35,9 @@
         body {
             cursor:url('{{asset('cursor.png')}}'), auto
         }
+        .swal2-title{
+            font-size: 1.5rem !important;
+        }
     </style>
 </head>
 
@@ -47,7 +50,7 @@
             <a href="index.html" class="sidebar-logo">
                 <img src="{{asset('images')}}/dark.png" alt="site logo" class="light-logo">
                 <img src="{{asset('images')}}/light.png" alt="site logo" class="dark-logo">
-                <img src="{{asset('images')}}/favicon   .png" alt="site logo" class="logo-icon">
+                <img src="{{asset('images')}}/favicon.png" alt="site logo" class="logo-icon">
             </a>
         </div>
         <div class="sidebar-menu-area">
@@ -166,7 +169,6 @@
     <!-- Bootstrap js -->
     <script src="{{asset('js')}}/lib/bootstrap.bundle.min.js"></script>
     <!-- Apex Chart js -->
-    <script src="{{asset('js')}}/lib/apexcharts.min.js"></script>
     <!-- Data Table js -->
     <script src="{{asset('js')}}/lib/dataTables.min.js"></script>
     <!-- Iconify Font js -->
@@ -183,10 +185,12 @@
     <!-- main js -->
     <script src="{{asset('js')}}/app.js"></script>
 
-    <script src="{{asset('js')}}/homeOneChart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         let table = new DataTable("#dataTable");
     </script>
+    @stack('scripts')
+
 </body>
 
 </html>

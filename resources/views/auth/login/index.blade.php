@@ -3,34 +3,45 @@
         Login
     </x-slot>
     <section class="auth bg-base d-flex flex-wrap">
-        <div class="auth-left d-lg-block d-none">
+        <div class="auth-left d-lg-block d-none bg-none">
             <div class="d-flex align-items-center flex-column h-100 justify-content-center">
-                <img src="{{asset('images')}}/auth/auth-img.png" alt="">
-            </div>  
+                <img src="{{asset('images')}}/auth/login.svg" alt="" style="width: 80%">
+            </div>
         </div>
         <div class="auth-right py-32 px-24 d-flex flex-column justify-content-center">
             <div class="max-w-464-px mx-auto w-100">
                 <div>
-                    <a href="index.html" class="mb-40 max-w-290-px">
-                        <img src="{{asset('images')}}/logo.png" alt="">
+                    <a href="index.html" class="mb-40 max-w-200-px">
+                        <img src="{{asset('images')}}/dark.png" style="width: 200px" alt="">
                     </a>
                     <h4 class="mb-12">Sign In to your Account</h4>
                     <p class="mb-32 text-secondary-light text-lg">Welcome back! please enter your detail</p>
                 </div>
-                <form action="#">
+                @if ($errors->any())
+                    <div class="alert alert-danger" role="alert">
+                        {{ $errors->first()}}
+                    </div>
+                @endif
+                @if (session('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                <form action="{{route('login.store')}}" method="POST">
+                    @csrf
                     <div class="icon-field mb-16">
                         <span class="icon top-50 translate-middle-y">
                             <iconify-icon icon="mage:email"></iconify-icon>
                         </span>
-                        <input type="email" class="form-control h-56-px bg-neutral-50 radius-12" placeholder="Email">
+                        <input type="email" class="form-control h-56-px bg-neutral-50 radius-12" name="email" placeholder="Email" required>
                     </div>
                     <div class="position-relative mb-20">
                         <div class="icon-field">
                             <span class="icon top-50 translate-middle-y">
                                 <iconify-icon icon="solar:lock-password-outline"></iconify-icon>
                             </span>
-                            <input type="password" class="form-control h-56-px bg-neutral-50 radius-12"
-                                id="your-password" placeholder="Password">
+                            <input type="password" name="password" class="form-control h-56-px bg-neutral-50 radius-12"
+                                id="your-password" placeholder="Password" required>
                         </div>
                         <span
                             class="toggle-password ri-eye-line cursor-pointer position-absolute end-0 top-50 translate-middle-y me-16 text-secondary-light"
@@ -75,5 +86,5 @@
                 </form>
             </div>
         </div>
-    </section>      
+    </section>
 </x-app-auth-layout>
