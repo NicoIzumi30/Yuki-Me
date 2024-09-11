@@ -31,18 +31,40 @@
     <link rel="stylesheet" href="{{asset('css')}}/lib/slick.css">
     <!-- main css -->
     <link rel="stylesheet" href="{{asset('css')}}/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
         body {
-            cursor:url('{{asset('cursor.png')}}'), auto
+            cursor: url('{{asset('cursor.png')}}'), auto
         }
-        .swal2-title{
+
+        .swal2-title {
             font-size: 1.5rem !important;
+        }
+        td{
+            font-size: 13px !important;
+        }
+        th{
+            font-size: 13px!important;
+        }
+        #dt-search-0{
+            text-align: left !important;
+            padding-left: 5px !important;
         }
     </style>
 </head>
 
 <body>
-    <aside class="sidebar"> 
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                title: "Success",
+                text: "{{ session('success') }}",
+                icon: "success"
+            });
+        </script>
+    @endif
+    <aside class="sidebar">
         <button type="button" class="sidebar-close-btn">
             <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
         </button>
@@ -185,7 +207,6 @@
     <!-- main js -->
     <script src="{{asset('js')}}/app.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         let table = new DataTable("#dataTable");
     </script>

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->string('long_url');
             $table->string('short_url');
+            $table->bigInteger('visits')->default(0);
             $table->string('slug');
             $table->string('qrcode');
             $table->timestamps();

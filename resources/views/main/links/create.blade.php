@@ -39,7 +39,7 @@
                                         <option value="1">Tanpa Kategori</option>
                                         @foreach ($categories as $category)
                                             @if($category->id != 1)
-                                                <option value="{{$category->slug}}">{{$category->name}}</option>
+                                                <option value="{{$category->id}}">{{$category->name}}</option>
                                             @endif
                                         @endforeach
                                     </select>

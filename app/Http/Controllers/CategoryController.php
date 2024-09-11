@@ -11,7 +11,7 @@ class CategoryController extends Controller
     if(auth()->user()->role == 'admin') {
         $categories = Category::withCount('links')->get();
     } else {
-        $categories = auth()->user()->categories()->withCount('links')->get();
+        $categories = Category::withCount('links')->where('user_id', auth()->user()->id)->get();
     }
     return view('main.category.index', compact('categories'));
    } 
